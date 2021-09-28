@@ -2,7 +2,8 @@
 > 基于CMD的操作方式：
 > 1. 打开mysql的安装目录bin文件夹：cd C:\mysql\mysql-5.7.35-winx64\bin
 > 2. 登录：mysql -u root -p;//输入密码登录
-> 3. 输入sql语句操作即可：例如create database name; -> 语句结尾必须添加分号，其会返回结果，结束的时候输入exit;[必须添加分号]
+> 3. 输入sql语句操作即可：例如create database name; -> 语句结尾必须添加分号，其会返回结果[语句结尾必须添加分号来表示语句的结束，mysql是非过程性语言(不依赖其它语句，一条语句返回一个结果)]
+> -> 结束的时候输入exit;[必须添加分号]
 
 ### 数据库操作
 > 创建
@@ -59,6 +60,7 @@ create table employee (
 > show tables;//xx库所有表
 > desc 表名;//查询表信息
 > show create table 表名;//查看表创建信息
+> -> use xx;//其没有该语句，修改语句都是直接指定'表名称'操作的，并非'use xx，先找到表，再执行sql; 修改语句直接放到了一起'
 
 > 修改 -> 操作较多，插入数据、某数据的字段等
 > rename table oldName to newName;//修改表名称
@@ -66,8 +68,6 @@ create table employee (
 > alter table 表名称 modify 字段名 数据类型(长度) 约束;//修改字段的数据类型、长度或约束
 > alter table 表名称 drop 字段名;//删除某字段
 > alter table 表名称 change 旧字段 新字段 数据类型(长度) 约束;//修改字段名称
-> 
-
 
 > 删除
 > drop table 表名称;
