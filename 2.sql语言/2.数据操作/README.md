@@ -30,7 +30,6 @@
 > delete from 表;//删除整张表 -> 其支持事务操作[数据库重要特性],删除后可通过事务恢复数据
 > truncate 表;//删除整张表，然后创建新表，但新表中没数据 -> 速度相比delete from xx 更快，但不支持事务，删除后无法恢复
 
-
 > delete from user where username = 'curry';
 
 > 基于事务的删除：
