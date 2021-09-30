@@ -106,6 +106,43 @@ select username,chinese from stu where username like '张%' order by chinese asc
 ```
 
 ### 聚焦函数
+> 聚焦操作某一列的数据
+> count();//数量
+> sum();//求和
+> avg();//平均值
+> max();//最大值
+> min();//最小值
+
+> 使用格式：
+> select func(*) | func(列名) from stu;
+
+```sql
+// count
+select count(*) from stu;
+select count(id) from stu;
+
+select count(math) from stu where math > 60;
+
+```
 
 
 
+
+
+
+### 分组查询
+> 
+
+
+```sql
+```
+
+
+
+
+### 
+
+
+
+```sql
+```
