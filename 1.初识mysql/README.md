@@ -32,16 +32,16 @@ character-set-server=utf8
 default-storage-engine=INNODB
 ```
 > 5. 初始化：
->       [1].打开CMD命令行
+>       [1].打开CMD命令行 -> 管理员身份运行[必须]
 >       [2].进到bin目录：C:\mysql\mysql-5.7.35-winx64\bin
->       [3].执行mysqld --initialize --console
+>       [3].执行mysqld --initialize --console -> 会生成mysql登录密码，后续登录需使用
 > 6. 安装：mysqld install
 > 7. 启动/关闭服务：
 >       [1].命令行操作：CMD命令行执行net start mysql、net stop mysql
 >       [2].图形化操作：win+R后输入services.msc,找到mysql服务启动关闭
 > 8. 使用服务：
->       需要登录：mysql -u root -p;//输入密码即可，默认登录密码是串乱码，可修改set password for root@localhost = password('xxxxxx')
-
+>       需要登录：mysql -u root -p;//输入密码即可，默认登录密码是串乱码，就是第5步初始化阶段生成的密码，登录成功后可修改set password for 'root'@'localhost' = password('xxxxxx'); SET PASSWORD FOR 'root'@'localhost' = PASSWORD('123456');//大小写均可
+![](assets/修改密码.png)
 #### 卸载
 > 1. 直接卸载mysql软件[其是数据库管理系统，但依旧是软件]
 > 2. 删除注册表：mysql安装目录、mysql数据存放目录
