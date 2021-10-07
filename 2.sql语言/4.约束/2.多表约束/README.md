@@ -23,7 +23,7 @@ insert into dept values(null,'运营部');// 自动递增
 insert into emp values(1,'a',1.5,1);
 insert into emp values(2,'b',1.5,1);
 
-// 删除：仅能先删除子表，再删除依赖表
+// 删除：仅能先删除子表[从表]，再删除依赖表[主表]
 delete from emp;
 delete from dept;
 ```
