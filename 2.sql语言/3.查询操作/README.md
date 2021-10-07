@@ -105,8 +105,8 @@ select username,english,math from stu order by english desc,math desc;//先按en
 select username,chinese from stu where username like '张%' order by chinese asc;
 ```
 
-### 聚焦函数
-> 聚焦操作某一列的数据
+### 聚集函数
+> 聚焦操作某一列的数据 -> 类似表格处理
 > count();//数量
 > sum();//求和
 > avg();//平均值
@@ -120,29 +120,35 @@ select username,chinese from stu where username like '张%' order by chinese asc
 // count
 select count(*) from stu;
 select count(id) from stu;
-
 select count(math) from stu where math > 60;
+select count(*) from stu where (math+english+chinese)k > 200;//总分大于200的数量 
 
+// sum
+select sum(math) from stu;
+select sum(math),sum(english),sum(chinese) from stu;
+select sum(math+english+chinese) from stu;
+select sum(chinese)/count(chinese) from stu;
+
+// avg
+select avg(chinese) from stu;
+select avg(math+english+chinese) from stu;
+
+// max
+select max(math) from stu;
+
+// min
+select min(math) from stu;
 ```
-
-
-
-
-
 
 ### 分组查询
-> 
+> 往往和聚集函数一起使用
 
-
-```sql
-```
-
-
-
-
-### 
-
-
+> 使用格式：
+> select * from stu group by 字段;//根据某字段进行分组，然后查询 -> select * from stu; 默认也有分组，分成一组
 
 ```sql
+select count(*) from stu group by sex;//分完组后再计算数量
+select product,sum(price) from orders group by product;
+// having关键字：分组后的条件过滤 -> where表示分组前的条件过滤[where放在group前后皆是如此]，having表示分组后的条件过滤
+select product, sum<price> from orders group by product having sum(price) > 100;
 ```
