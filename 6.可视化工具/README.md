@@ -7,5 +7,5 @@
 ### Workbench
 > Mysql官方提供的可视化管理工具
 
-### SQLyou
+### SQLyog
 > 管理mysql
