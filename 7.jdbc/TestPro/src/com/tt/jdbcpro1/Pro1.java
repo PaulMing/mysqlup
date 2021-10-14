@@ -1,5 +1,5 @@
 /*
-    jdbc测试demo
+    jdbc测试demo - 基本版
 */
 package com.tt.jdbcpro1;
 
