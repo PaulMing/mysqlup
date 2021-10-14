@@ -1,11 +1,11 @@
 /*
     jdbc测试demo
 */
-package com.tt.jdbc;
+package com.tt.jdbcpro1;
 
 import java.sql.*;
 
-public class Demo1 {
+public class Pro1 {
     public static void main(String[] args) throws ClassNotFoundException, SQLException {
         /*
           1.加载驱动：
