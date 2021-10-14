@@ -5,15 +5,16 @@ import java.sql.*;
 import java.util.Properties;
 
 public class JdbcUtils {
-
-    private static String dirver = null;
+    private static String driver = null;
     private static String url = null;
     private static String username = null;
     private static String password = null;
 
+    // 静态构造快：完成驱动加载[仅加载一次即可]
     static {
         try {
-            InputStream in = JdbcUtils.class.getClassLoader().getResources("db.properties");
+            // src下的资源均可通过反射拿到
+            InputStream in = JdbcUtils.class.getClassLoader().getResourceAsStream("db.properties");
             Properties properties = new Properties();
             properties.load(in);
 
@@ -22,7 +23,6 @@ public class JdbcUtils {
             username = properties.getProperty("username");
             password = properties.getProperty("password");
 
-            // 仅加载一次驱动即可
             Class.forName(driver);
         } catch(Exception e) {
             e.printStackTrace();
@@ -39,24 +39,24 @@ public class JdbcUtils {
         if (resultSet != null) {
             try {
                 resultSet.close();
-            } catch (SQLException throwables) {
-                throwables.printStackTrace();
+            } catch (SQLException e) {
+                e.printStackTrace();
             }
         }
 
         if(statement != null) {
             try {
                 statement.close();
-            } catch (SQLException throwables) {
-                throwables.printStackTrace();
+            } catch (SQLException e) {
+                e.printStackTrace();
             }
         }
 
         if(connection != null) {
             try {
                 connection.close();
-            } catch (SQLException throwables) {
-                throwables.printStackTrace();
+            } catch (SQLException e) {
+                e.printStackTrace();
             }
         }
     }
