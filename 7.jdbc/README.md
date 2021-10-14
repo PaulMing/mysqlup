@@ -1,27 +1,10 @@
 ## jdbc -> 数据库连接池
 > 背景：SUN公司提供了JAVA操作数据库规范，也就是JDBC，这些规范由具体厂商实现
-> 
-> 包 java.sql    javax.sql
-> 数据库驱动包
-
+> 其作为应用程序与数据库的'连接媒介'，需要满足所有的sql操作，也就是根据sql完成对数据的操作
 ![](assets/数据库连接.png)
 
-jdbc就需要满足完成所有的sql操作
-
-
-
-
-
-
-
-## 
-创建数据库
-
-
-1. 创建普通项目
-2. 导入jdbc驱动
-   [1].下载jar包
-   [2].将jar包放入项目lib目录下
-   [3].lib目录右键add as library 这样才算导入进来了
-3. 编写测试代码
-   
+> 需要的包：
+> 1. java.sql
+> 2. javax.sql
+> 3. 数据库驱动包 -> 官方下载即可https://dev.mysql.com/downloads/connector/j/
+![](assets/jar包.png)
