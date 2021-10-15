@@ -6,7 +6,7 @@
 > 2. 导入jdbc驱动jar包
 >    [1].下载jar包 -> https://dev.mysql.com/downloads/connector/j/
 >    [2].创建lib文件夹，将jar包放入lib目录下
->    [3].lib目录右键add as library -> 这样才算真正导入进来了
+>    [3].lib目录右键add as library -> 这样才算真正导入进来了[其会解压缩jar包]
 > 3. 准备数据：创建数据库、表数据等
 > 4. 编写jdbc相关代码便可操作数据库了
 

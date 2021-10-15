@@ -22,5 +22,5 @@ yarn-error.log*
 *.class
 # *.iml
 
-# jdbc jra包
-mysql-connector-java-8.0.26
+# jar包
+*jar包

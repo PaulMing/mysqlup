@@ -1,17 +1,20 @@
 /*
-    jdbc操作事务
+    数据库连接池：
+        -> 连接池提供了数据源，基于数据源操作
 */
-package com.tt.jdbcpro4;
+package com.tt.jdbcpro5;
 
-import com.tt.jdbcpro2.utils.JdbcUtils;
-import java.sql.*;
+import com.tt.jdbcpro5.utils.JdbcUtils_DBCP;
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.SQLException;
 
-public class Pro4 {
+public class Pro5 {
     public static void main(String[] args) {
         Connection conn = null;
         PreparedStatement st = null;
         try {
-            conn = JdbcUtils.getConnection();
+            conn = JdbcUtils_DBCP.getConnection();
             // 关闭数据库的自动提交，此时会自动开启事务
             conn.setAutoCommit(false);
 
@@ -36,7 +39,7 @@ public class Pro4 {
             }
             e.printStackTrace();
         } finally {
-            JdbcUtils.release(conn,st,null);
+            JdbcUtils_DBCP.release(conn,st,null);
         }
     }
 }
